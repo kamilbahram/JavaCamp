@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="917e34d1-a9c7-4f48-ad19-c227db7974df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../JavaCamp/northwind/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCamp/northwind/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaCamp/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCamp/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaCamp/northwind/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCamp/northwind/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/northwind/NorthWindCollectionProduct.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/northwind/NorthWithCollectionUser.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/ProductsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../JavaCamp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,7 +33,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/arrow/Desktop/Java/JavaCamp/northwind"
+    "last_opened_file_path": "C:/Users/arrow/Desktop/Java/JavaCamp"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

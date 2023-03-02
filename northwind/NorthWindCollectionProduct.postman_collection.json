@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "0f56c490-b59c-487e-9dd6-b98ad517c575",
+		"name": "NorthWindCollectionProduct",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21329450"
+	},
+	"item": [
+		{
+			"name": "northwindProduct_getAll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"let response=pm.response.json();\r",
+							"\r",
+							"let c = console.log(response.success)\r",
+							"\r",
+							"\r",
+							"pm.test(\"test eğitim : \", function(){\r",
+							"    pm.expect(a).to.have.property(c).and.be.an('success');\r",
+							"\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"SuccessData deneniyor!!!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "northwindProductAdd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"catagory_id\": 2,\r\n            \"productName\": \"sDSD233r3rrrrrr61\",\r\n            \"unitPrice\": 18.0,\r\n            \"unitsInStock\": 39,\r\n            \"quantityPerUnit\": \"10 boxes x 30 bags\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getByProductName?productName=Trabzonspor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getByProductName"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "Trabzonspor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductNameAndCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getByProductNameAndCategory?productName=Chai&categoryId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getByProductNameAndCategory"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "Chai"
+						},
+						{
+							"key": "categoryId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductNameOrCategory_CategoryId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getByProductNameOrCategory_CategoryId?productName=Pavlova&categoryId=9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getByProductNameOrCategory_CategoryId"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "Pavlova"
+						},
+						{
+							"key": "categoryId",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductNameContains",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getByProductNameContains?productName=Grandma's Boysenberry Spread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getByProductNameContains"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "Grandma's Boysenberry Spread"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductNameStartsWith",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getByProductNameStartsWith?productName=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getByProductNameStartsWith"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": ""
+						},
+						{
+							"key": "type",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByPage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getAllByPage?pageNo=0&pageSize=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getAllByPage"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSordetDesc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getAllSordetDesc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getAllSordetDesc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductWithCategoryDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/getProductWithCategoryDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"getProductWithCategoryDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByCategory_CategoryIdInList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[1,2,3]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products//getByCategoryIdIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"",
+						"getByCategoryIdIn"
+					],
+					"query": [
+						{
+							"key": "categories",
+							"value": "1,2,3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -53,7 +53,7 @@ public class ProductsController {
 		return this.productService.getByProductNameOrCategory_CategoryId(productName, categoryId);		
 	}	
 	@GetMapping("/getByCategoryIdIn")
-	public DataResult<List<Product>> getByCategoryIdIn(@RequestParam("categories[]")  List<Integer> categories){
+	public DataResult<List<Product>> getByCategoryIdIn(@RequestBody  List<Integer> categories){
 		return this.productService.getByCategory_CategoryIdIn(categories);
 	}
 	@GetMapping("/getByProductNameContains")

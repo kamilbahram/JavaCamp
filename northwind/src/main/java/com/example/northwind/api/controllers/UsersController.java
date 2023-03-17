@@ -1,7 +1,5 @@
 package com.example.northwind.api.controllers;
 
-
-import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,11 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import com.example.northwind.bussines.absracts.UserService;
 import com.example.northwind.core.entities.User;
 import com.example.northwind.core.utilities.result.DataResult;
 import com.example.northwind.core.utilities.result.ErrorDataResult;
+import com.example.northwind.core.utilities.valitation.ErrorHandlerExceptionValidation;
+
 import jakarta.validation.Valid;
 
 
@@ -32,6 +31,7 @@ import jakarta.validation.Valid;
 public class UsersController {
 	
 	private UserService userService;
+	private ErrorHandlerExceptionValidation err= new ErrorHandlerExceptionValidation();
 	
 	@Autowired
 	public UsersController(UserService userService) {
@@ -63,6 +63,7 @@ public class UsersController {
 	public ResponseEntity<?> add(@Valid @RequestBody User user) {	
 		return ResponseEntity.ok(this.userService.add(user));
 	}
+	
 	
 	
 	//Sınıflarımızda hata çıkınca cıkan hataları yakalamaya yarar cıkan hatanın hangi alandan ve hatanı ne olduğunu belirtir.

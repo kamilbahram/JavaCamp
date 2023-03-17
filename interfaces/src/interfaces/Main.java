@@ -27,6 +27,22 @@ public class Main {
 		System.out.println(b);
 		System.out.println(ac[0]);
 		System.out.println(ab[0]);
+		
+		boolean t = false;
+		int [] dizi = {1,2,3,4,5};
+		for (int i : dizi) {
+			System.out.println(i);
+			if (i == 3) {
+				t = true;
+				break;
+				
+			}	
+		}
+		System.out.println(t);
+		if (t) {
+			System.out.println("svess");
+		}else {System.out.println("else");}
+		
 
 	}
 

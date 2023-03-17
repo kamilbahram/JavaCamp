@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="917e34d1-a9c7-4f48-ad19-c227db7974df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/northwind/NorthWindCollectionProduct.postman_collection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/northwind/NorthWithCollectionUser.postman_collection.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/NorthwindApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/api/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/absracts/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/absracts/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/absracts/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/absracts/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/cocnretes/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/cocnretes/ProductManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/cocnretes/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/bussines/cocnretes/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/core/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/core/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/dataAccess/absracts/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/dataAccess/absracts/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/entities/concretes/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/entities/concretes/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/entities/concretes/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/northwind/src/main/java/com/example/northwind/entities/concretes/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/arrow/Desktop/Java/JavaCamp"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/arrow/Desktop/Java/JavaCamp&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -2,7 +2,11 @@ package com.example.northwind.entities.concretes;
 
 import jakarta.persistence.Column;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.ManyToAny;
+
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -40,10 +44,9 @@ public class Product {
 	@Column(name = "quantity_per_unit")
 	private String quantityPerUnit;
 
-	@ManyToOne()
-	@JoinColumn(name="category_id")
-	private Category category;
-	
+	@ManyToOne() // Productların her birinin bir categorysi olur. Yani bir product un birden fazla category_id si olamaz.
+	@JoinColumn(name="category_id")   //, referencedColumnName = "category_id"
+	private Category category; 
 	//, insertable = false, updatable = false
 	
 	

@@ -2,13 +2,16 @@ package com.example.northwind.bussines.absracts;
 
 import java.util.List;
 
-
+import com.example.northwind.bussines.request.create.CreateProductsRequest;
+import com.example.northwind.bussines.request.update.UpdateProductRequest;
+import com.example.northwind.bussines.response.GetAllProductsResponse;
 import com.example.northwind.core.utilities.result.DataResult;
 import com.example.northwind.core.utilities.result.Result;
 import com.example.northwind.entities.concretes.Product;
 import com.example.northwind.entities.dtos.ProductWithCategory;
 
 public interface ProductService {
+
 	//List<Product> getAll();
 	DataResult<List<Product>> getAll();
 	DataResult<List<Product>> getAllSorted();
@@ -22,4 +25,12 @@ public interface ProductService {
 	DataResult<List<Product>> getByProductNameStartsWith(String productName);
 	//DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
 	DataResult<List<ProductWithCategory>> getProductWithCategoryDetails();
+	DataResult<List<Product>> findByProductNameOrderByProductNameDesc(String productName);
+	// Update
+	DataResult<Product> update(Product product);
+	
+	// Reguest and Resbonse imzalarının uygulanışı
+	DataResult<List<GetAllProductsResponse>> getAll2();
+	DataResult<CreateProductsRequest> add2(CreateProductsRequest createProductsRequest);
+	DataResult<UpdateProductRequest> update2(UpdateProductRequest updateProductRequest);
 }

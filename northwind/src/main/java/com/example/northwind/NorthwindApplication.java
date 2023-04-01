@@ -12,13 +12,19 @@ public class NorthwindApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NorthwindApplication.class, args);
 	}
-	
+
 	@Bean
 	public ModelMapper getModelMapper() {
 		return new ModelMapper();
 	}
 
-/*
+//	@Bean
+//	public DatabaseLogger databaseLogger(){
+//		return new DatabaseLogger();
+//	}
+
+
+	/*
 	@Bean
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  

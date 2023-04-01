@@ -13,6 +13,8 @@ import com.example.northwind.core.utilities.result.Result;
 import com.example.northwind.core.utilities.result.SuccessDataResult;
 import com.example.northwind.core.utilities.result.SuccessResult;
 
+import net.bytebuddy.asm.Advice.This;
+
 
 @Service
 public class UserManager implements UserService{
@@ -39,12 +41,6 @@ public class UserManager implements UserService{
 	public DataResult<List<User>> getByAll() {
 		return new SuccessDataResult<List<User>>
 		(this.userDao.findAll() , "SuccessData deneniyor!!!");
-	}
-
-	@Override
-	public DataResult<User> getId() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

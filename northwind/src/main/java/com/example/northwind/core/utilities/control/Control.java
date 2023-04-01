@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 @Service
 public class Control  implements ControlService{
 	private static final Logger logger = LoggerFactory.getLogger(Control.class);
-	//List<Product> products = new ArrayList<>();
 	ProductDao productDao;
 	@Autowired
 	public Control(ProductDao productDao) {
@@ -37,18 +36,5 @@ public class Control  implements ControlService{
 			}
 		}
 		return a;
-
-//		//["kamil", "mehmet", "ali"]    "mehmet"
-//		for (Product pro : products) {
-//			logger.info(String.format("Example log from {}/////////" + pro.getProductName() + "///" + createProductsRequest.getProductName() ), Control.class.getSimpleName());
-//			if (pro.getProductName().toString() == createProductsRequest.getProductName().toString()) {
-//				logger.info(String.format("Example log from {}/////////" + pro.getProductName() + "///" + createProductsRequest.getProductName() ), Control.class.getSimpleName());
-//				a =false;
-//				break;
-//			}
-//
-//		}
 	}
-
-
 }

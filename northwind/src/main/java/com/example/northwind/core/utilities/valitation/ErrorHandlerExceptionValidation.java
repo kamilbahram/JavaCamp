@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.northwind.core.utilities.result.ErrorDataResult;
 
-public class ErrorHandlerExceptionValidation {
+public class ErrorHandlerExceptionValidation implements ErrorHandlerExceptionService{
 	
 	
 	//Sınıflarımızda hata çıkınca cıkan hataları yakalamaya yarar
@@ -23,9 +23,13 @@ public class ErrorHandlerExceptionValidation {
 			for(FieldError fieldError : exceptions.getBindingResult().getFieldErrors()) {
 				validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
 			}
-			
+
 			ErrorDataResult<Object> errors = new ErrorDataResult<Object>(validationErrors,"Doğrulama hataları");
 			return errors;
 	}
 
+	@Override
+	public void errorHandlerexception() {
+
+	}
 }

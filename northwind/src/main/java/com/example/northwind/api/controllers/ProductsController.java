@@ -4,21 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.northwind.bussines.request.delete.RequestProductDelete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.northwind.bussines.absracts.ProductService;
 import com.example.northwind.bussines.request.create.CreateProductsRequest;
@@ -60,57 +53,56 @@ public class ProductsController {
 	}
 	
 	@GetMapping("/getallDesc")
-	public DataResult<List<Product>> getAllDesc(@RequestParam String productName) {
-		return this.productService.findByProductNameOrderByProductNameDesc(productName);		
+	public ResponseEntity<?> getAllDesc(@RequestParam String productName) {
+		return ResponseEntity.ok(this.productService.findByProductNameOrderByProductNameDesc(productName));
 	}
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody Product product) {
-		
-		return this.productService.add(product);
+	public ResponseEntity<?> add(@RequestBody Product product) {
+		return ResponseEntity.ok(this.productService.add(product));
 	}
 	@GetMapping("/getByProductName")
-	public DataResult<Product> getByProductName(@RequestParam String productName) {
-		return this.productService.getByProductName(productName);		
+	public ResponseEntity<?> getByProductName(@RequestParam String productName) {
+		return ResponseEntity.ok(this.productService.getByProductName(productName));
 	}
 	@GetMapping("/getByProductNameAndCategory")
-	public DataResult<Product> getByProductNameAndCategory(@RequestParam String productName, @RequestParam int categoryId){
-		return this.productService.getByProductNameAndCategory_CategoryId(productName, categoryId);
+	public ResponseEntity<?> getByProductNameAndCategory(@RequestParam String productName, @RequestParam int categoryId){
+		return ResponseEntity.ok(this.productService.getByProductNameAndCategory_CategoryId(productName, categoryId));
 	}
 	@GetMapping("/getByProductNameOrCategory_CategoryId")
-	public DataResult<List<Product>> getByProductNameOrCategory_CategoryId(@RequestParam String productName, @RequestParam int categoryId){
-		return this.productService.getByProductNameOrCategory_CategoryId(productName, categoryId);		
+	public ResponseEntity<?> getByProductNameOrCategory_CategoryId(@RequestParam String productName, @RequestParam int categoryId){
+		return ResponseEntity.ok(this.productService.getByProductNameOrCategory_CategoryId(productName, categoryId));
 	}	
 	@GetMapping("/getByCategoryIdIn")
-	public DataResult<List<Product>> getByCategoryIdIn(@RequestBody  List<Integer> categories){
-		return this.productService.getByCategory_CategoryIdIn(categories);
+	public ResponseEntity<?> getByCategoryIdIn(@RequestBody  List<Integer> categories){
+		return ResponseEntity.ok(this.productService.getByCategory_CategoryIdIn(categories));
 	}
 	@GetMapping("/getByProductNameContains")
-	public DataResult<List<Product>> getByProductNameContains(@RequestParam String productName){
-		return this.productService.getByProductNameContains(productName);
+	public ResponseEntity<?> getByProductNameContains(@RequestParam String productName){
+		return ResponseEntity.ok(this.productService.getByProductNameContains(productName));
 	}
 	@GetMapping("/getByProductNameStartsWith")
-	public DataResult<List<Product>> getByProductNameStartsWith(@RequestParam String productName){
-		return this.productService.getByProductNameStartsWith(productName);
+	public ResponseEntity<?> getByProductNameStartsWith(@RequestParam String productName){
+		return ResponseEntity.ok(this.productService.getByProductNameStartsWith(productName));
 	}
 	@GetMapping("/getAllByPage")
-	public DataResult<List<Product>> getAllByPage(@RequestParam int pageNo, @RequestParam int pageSize){
-		return this.productService.getAll(pageNo, pageSize);		
+	public ResponseEntity<?> getAllByPage(@RequestParam int pageNo, @RequestParam int pageSize){
+		return ResponseEntity.ok(this.productService.getAll(pageNo, pageSize));
 	}
 	@GetMapping("/getAllSordetDesc")
-	public DataResult<List<Product>> getAllSordetDesc(){
-		return this.productService.getAllSorted();
+	public ResponseEntity<?> getAllSordetDesc(){
+		return ResponseEntity.ok(this.productService.getAllSorted());
 	}
 	@GetMapping("/getProductWithCategoryDetails")
-	public DataResult<List<ProductWithCategory>> getProductWithCategoryDetails(){
-		return this.productService.getProductWithCategoryDetails();
+	public ResponseEntity<?> getProductWithCategoryDetails(){
+		return ResponseEntity.ok(this.productService.getProductWithCategoryDetails());
 	}
 	
 	@PutMapping("/update")
-	public DataResult<Product> update(@RequestBody Product product){
-		return this.productService.update(product);
+	public ResponseEntity<?> update(@RequestBody Product product){
+		return ResponseEntity.ok(this.productService.update(product));
 	}
-	
+
 	@GetMapping("/getAll2")
 	public ResponseEntity<?> getAll2(){
 		return ResponseEntity.ok(this.productService.getAll2());
@@ -122,6 +114,10 @@ public class ProductsController {
 	@PutMapping("/update2")
 	public ResponseEntity<?> update2(@Valid @RequestBody UpdateProductRequest updateProductRequest){
 		return ResponseEntity.ok(this.productService.update2(updateProductRequest));
+	}
+	@DeleteMapping("/Delete")
+	public ResponseEntity<?> delete(@Valid @RequestBody RequestProductDelete requestProductDelete){
+		return ResponseEntity.ok(this.productService.delete(requestProductDelete));
 	}
 		
 }

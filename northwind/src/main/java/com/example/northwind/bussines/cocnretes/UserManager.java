@@ -2,6 +2,7 @@ package com.example.northwind.bussines.cocnretes;
 
 import java.util.List;
 
+import com.example.northwind.core.crud.abstracts.Crud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +43,4 @@ public class UserManager implements UserService{
 		return new SuccessDataResult<List<User>>
 		(this.userDao.findAll() , "SuccessData deneniyor!!!");
 	}
-
 }

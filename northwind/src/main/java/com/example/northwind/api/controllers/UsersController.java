@@ -3,7 +3,6 @@ package com.example.northwind.api.controllers;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,24 +20,17 @@ import com.example.northwind.bussines.absracts.UserService;
 import com.example.northwind.core.entities.User;
 import com.example.northwind.core.utilities.result.DataResult;
 import com.example.northwind.core.utilities.result.ErrorDataResult;
-import com.example.northwind.core.utilities.valitation.ErrorHandlerExceptionValidation;
-
 import jakarta.validation.Valid;
-
-
 @RestController
 @RequestMapping("/api/users")
 public class UsersController {
-	
+
 	private UserService userService;
-	private ErrorHandlerExceptionValidation err= new ErrorHandlerExceptionValidation();
-	
 	@Autowired
 	public UsersController(UserService userService) {
 		super();
 		this.userService = userService;
 	}
-	
 	@GetMapping("/getByEmail")
 	public User getEmail(@RequestParam String email) {
 		return this.userService.getByEmail(email);
@@ -48,24 +40,13 @@ public class UsersController {
 		return this.userService.getByAll();
 	}
 	
-	
-	/*
+	/* ? işareti add() metotıunun sonucu istediğimiz gibi dönmeyebilir
+	global expection handler */
 	@PostMapping("/addUser")
-	public Result add(@RequestBody User user) {	
-		return this.userService.add(user);
-	}
-    */
-	
-	//ResponseEntity<> yapılan isteğe göre hangi hata türünün(http 201) geleceğini belirtir
-	// ? işareti add() metotıunun sonucu istediğimiz gibi dönmeyebilir
-	//global expection handler
-	@PostMapping("/addUser")
-	public ResponseEntity<?> add(@Valid @RequestBody User user) {	
+	public ResponseEntity<?> add(@Valid @RequestBody User user) {
 		return ResponseEntity.ok(this.userService.add(user));
 	}
-	
-	
-	
+
 	//Sınıflarımızda hata çıkınca cıkan hataları yakalamaya yarar cıkan hatanın hangi alandan ve hatanı ne olduğunu belirtir.
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

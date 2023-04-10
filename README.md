@@ -1,19 +1,13 @@
 # JavaCamp
 
-Bu repo üç bölümden oluşmaktadır.
-
-# interfaces
-   --"interfaces" bölümünde interface kullanımının örnekleri mevcuttur.
-
-# nLayeredDemo
-
-   --ikinci bölüm SOLİD prensiplerine uygun n katmanlı mimari projesi tasarlanmıştır.
+Bu repo eğitim reposudur.
+SOLİD prensiplerine uygun ve N-Tier mimariye göre tasarlanmıştır.
 
 # northwind
 
 ###  a) entity Katmanı
 
-* ##### Projenin veritabanını oluşturacak tabloların classlarının tasarlandığı bölüm
+* ##### Projenin veritabanını oluşturacak tabloların classlarının tasarlandığı ve ilişkilerin oluşturulduğu katmandır.
 
 * ##### Lombok, set-get metotları ve constructor yapılarının oluşturulması için kullanıldı.
  
@@ -25,7 +19,7 @@ Bu repo üç bölümden oluşmaktadır.
 *       bussines/concretes da operasyonların clasları tanımlanır.
 ###  d) core Katmanı
 * #### Her projede kullanabileceğimiz yapıları bu katmanda yazılmaktadır.
-* #### Result ve User yönetimi bu katmanda gerçekleştirildi.
+* #### Result, Logging, Mappers ve User yapıları bu katmanda gerçekleştirildi.
 ###  e) api Katmanı
 * #### Çalıştırmak istediğimiz sorguların çağrılarının yapıldı katmandır"
 

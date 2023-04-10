@@ -1,6 +1,7 @@
 package com.example.northwind.bussines.cocnretes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.example.northwind.bussines.request.delete.RequestProductDelete;
@@ -9,6 +10,7 @@ import com.example.northwind.entities.concretes.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.northwind.bussines.absracts.ProductService;
@@ -46,11 +48,11 @@ public class ProductManager implements ProductService {
 	public DataResult<List<Product>> getAll() {
 		try {
 			DataResult<List<Product>> result = new SuccessDataResult<List<Product>>
-					(this.productDao.findAll(), "Tüm Ürünler Getirildi."  );
+					(this.productDao.findAll(Sort.by(Sort.Direction.ASC, "id")), "Tüm Ürünler Getirildi."  );
 			loggerss.forEach(logger -> logger.add("Tüm Ürünler Getirildi"));
 			return result;
 		}catch (Exception e){
-			loggerss.forEach(logger -> logger.add("Ürünler Getirilemedi," + e.toString()));
+			loggerss.forEach(logger -> logger.add("Ürünler Getirilemedi : " + e.toString()));
 			return new ErrorDataResult<List<Product>>(e.toString());
 		}
 	}
@@ -67,15 +69,24 @@ public class ProductManager implements ProductService {
 		} catch (Exception e) {
 			return new ErrorDataResult<CreateProductsRequest> (e.toString());
 		}
-
 	}
 
 	@Override
 	public DataResult<UpdateProductRequest> update2(UpdateProductRequest updateProductRequest) {
-		Product product = this.modelMapperService.forRequest().map(updateProductRequest, Product.class);
-		this.productDao.save(product);
-		return new SuccessDataResult<UpdateProductRequest> (updateProductRequest, "update otomatik mapper uygulandı.");
-
+		try {
+			if (this.productDao.getByProductNameContains(updateProductRequest.getName()).isEmpty() == false) {
+				Product product = this.modelMapperService.forRequest().map(updateProductRequest, Product.class);
+				this.productDao.save(product);
+				loggerss.forEach(logger -> logger.add("Güncelleme İşlemi Gerçekleştirildi."));
+				return new SuccessDataResult<UpdateProductRequest> (updateProductRequest, "update otomatik mapper uygulandı.");
+			} else {
+				loggerss.forEach(loggers -> loggers.add("Güncellenecek Ürün Bulunamadı : "));
+				return new DataResult<UpdateProductRequest> (updateProductRequest,true, "Güncelleme yapılacak ürün bulunamadı" );
+			}
+		} catch (Exception e) {
+			loggerss.forEach(logger -> logger.add(e.toString()));
+			return new ErrorDataResult<UpdateProductRequest> (null, e.toString());
+		}
 	}
 
 	@Override
@@ -118,7 +129,6 @@ public class ProductManager implements ProductService {
 					return result;
 				}else
 					return new DataResult<Product>(null,true,"Aranan Özellikte Ürün Bulunmamaktadır.");
-
 		}catch (Exception e) {
 			return new ErrorDataResult<Product>("Başarısız İşlem : " + e.toString());
 		}

@@ -1,5 +1,9 @@
 package com.example.northwind.core.utilities.valitation;
 
+import com.example.northwind.core.utilities.result.ErrorDataResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+
 public interface ErrorHandlerExceptionService {
-    void errorHandlerexception();
+    ErrorDataResult<Object> handleValidationException
+            (MethodArgumentNotValidException exceptions);
 }
